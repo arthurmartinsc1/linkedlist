@@ -14,8 +14,7 @@ class Node
         prox = NULL;
     }
 
-    ~Node(){
-        cout << "destrutor " << key << endl;}
+    
 };
 
 
@@ -65,6 +64,25 @@ void remover(int valor){
     }
 }
 
+void busca(int valor){
+    Node *atual = inicio;
+    while (atual && atual->key !=valor){
+        atual = atual->prox;
+    }
+    if (atual)
+    cout<<"existe o numero procurado";
+    else
+    {
+        cout<< "nao existe o numero procurado";
+    }
+    
+    
+}
+    
+    
+
+
+
 
 void impressao(){
 Node *atual = inicio;
@@ -80,15 +98,14 @@ int main(){
 ListaEncadeada l;
 
 l.inserir(10);
-l.inserir(7);
 l.inserir(5);
+l.inserir(7);
+l.inserir(9);
 
-l.impressao();
+l.busca(4);
 
-l.remover(7);
-l.remover(9);
 
-l.impressao();
+
 }
 
 
